@@ -1,0 +1,52 @@
+#import "~/graph-ql/model/podcasts/preview.graphql"
+#import "~/graph-ql/model/events/preview.graphql"
+#import "~/graph-ql/model/articles/preview.graphql"
+#import "~/graph-ql/model/team/preview.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query getArticle($slug: [String]) {
+  entry(section: "articles", uri: $slug) {
+    ...articlePreview
+    ... on articles_default_Entry {
+      triggerWarning
+      authorKnowledgeHub {
+        ... on team_default_Entry {
+          id
+          uri
+          name: heading
+        }
+      }
+      customAuthor {
+        ... on customAuthor_BlockType {
+          id
+          name: fullName
+        }
+      }
+      articleTags {
+        ... on articleTags_Tag {
+          id
+          title
+        }
+      }
+      getInTouch: teamSelectMultiple {
+        ...teamMemberPreview
+      }
+      overrideKnowledge {
+        ...articlePreview
+        ...eventPreview
+        ...podcastPreview
+      }
+      mainContent: wysiwyg
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

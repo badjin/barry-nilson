@@ -1,0 +1,6 @@
+#import "~/graph-ql/model/articles/preview.graphql"
+query Articles {
+  entries(section: "articles") {
+    ...articlePreview
+  }
+}

@@ -1,0 +1,39 @@
+#import "~/graph-ql/model/news/preview.graphql"
+
+fragment NewsList on contentBuilder_newsEntryList_BlockType {
+  ... on contentBuilder_newsEntryList_BlockType {
+    __typename
+    heading
+    cta: callToAction {
+      ariaLabel
+      customText
+      target
+      text
+      title
+      type
+      url
+    }
+    newsTags {
+      ... on newsTags_Tag {
+        id
+        title
+      }
+    }
+    entryOverride: relatedNews {
+      ...newsPreview
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    anchorId
+  }
+}

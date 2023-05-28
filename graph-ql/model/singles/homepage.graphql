@@ -1,0 +1,42 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+query homepage {
+  entry (section: "homepage") {
+    ...EntryBase
+    ... on homepage_homepage_Entry {
+      heading
+      description
+      image {
+        ...LazyLoadingImage
+      }
+      videoClip {
+        url
+      }
+      mediaSwitch
+      ctas {
+        ... on ctas_block_BlockType {
+          cta {
+            ariaLabel
+            customText
+            target
+            text
+            title
+            type
+            url
+          }
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+#import "~/graph-ql/model/news/preview.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query getNews($slug: [String]) {
+  entry(section: "news", uri: $slug) {
+    ...newsPreview
+    ... on news_default_Entry {
+      triggerWarning
+      mainContent: wysiwyg
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

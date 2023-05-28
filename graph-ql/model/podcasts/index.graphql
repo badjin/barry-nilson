@@ -1,0 +1,6 @@
+#import "~/graph-ql/model/podcasts/preview.graphql"
+query Podcasts {
+  entries(section: "podcasts") {
+    ...podcastPreview
+  }
+}

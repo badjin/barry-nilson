@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bnlaw.com.au/sitemap.xml

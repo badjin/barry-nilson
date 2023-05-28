@@ -1,0 +1,8 @@
+#import "~/graph-ql/model/locations/preview.graphql"
+query LocationsIndex {
+  entries(section: "locations") {
+    ... on locations_default_Entry {
+      ...locationPreview
+    }
+  }
+}

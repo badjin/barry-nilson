@@ -1,0 +1,21 @@
+fragment Quote on contentBuilder_quote_BlockType {
+  ... on contentBuilder_quote_BlockType {
+    __typename
+    quote: heading
+    writer: subheading
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

@@ -1,0 +1,5 @@
+fragment LazyLoadingImage on AssetInterface {
+  orig: url
+  src: url @transform(width: 2000)
+  loading: url @transform(width: 10)
+}

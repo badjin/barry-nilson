@@ -1,0 +1,132 @@
+.container {
+  @apply w-full mx-auto px-6;
+}
+
+@screen md {
+  .container {
+    @apply px-8;
+  }
+}
+
+.py-c {
+  @apply py-c-mobile;
+}
+
+@screen md {
+  .py-c {
+    @apply py-c-desktop;
+  }
+}
+
+.pb-c {
+  @apply pb-c-mobile;
+}
+
+@screen md {
+  .pb-c {
+    @apply pb-c-desktop;
+  }
+}
+
+.pt-c {
+  @apply pt-c-mobile;
+}
+
+@screen md {
+  .pt-c {
+    @apply pt-c-desktop;
+  }
+}
+
+.my-c {
+  @apply my-c-mobile;
+}
+
+@screen md {
+  .my-c {
+    @apply my-c-desktop;
+  }
+}
+
+.mt-c {
+  @apply mt-c-mobile;
+}
+
+@screen md {
+  .mt-c {
+    @apply mt-c-desktop;
+  }
+}
+
+.py-xs {
+  @apply py-xs-mobile;
+}
+
+@screen lg {
+  .py-xs {
+    @apply py-xs-desktop;
+  }
+}
+
+.py-sm {
+  @apply py-sm-mobile;
+}
+
+@screen md {
+  .py-sm {
+    @apply py-sm-desktop;
+  }
+}
+
+.py-md {
+  @apply py-md-mobile;
+}
+
+@screen md {
+  .py-md {
+    @apply py-md-desktop;
+  }
+}
+
+.pb-zero {
+  @apply py-0;
+}
+
+@screen md {
+  .pb-zero {
+    @apply pt-16 pb-0;
+  }
+}
+
+.zero-desktop {
+  @apply my-0 p-0;
+}
+
+.px-zero {
+  @apply px-0 py-16;
+}
+
+.tc-container {
+  @apply px-5 mx-auto;
+  max-width: 2000px;
+}
+
+.tc-container-image {
+  @apply mx-auto;
+  max-width: 2000px;
+}
+
+.tc-component {
+  @apply px-5;
+}
+
+@screen md {
+  .tc-container {
+    @apply px-10;
+  }
+  
+  .tc-component {
+    @apply px-10;
+  }
+}
+

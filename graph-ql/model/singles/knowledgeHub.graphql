@@ -1,0 +1,34 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+#import "~/graph-ql/model/podcasts/preview.graphql"
+#import "~/graph-ql/model/events/preview.graphql"
+#import "~/graph-ql/model/articles/preview.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+
+query knowledgeHub {
+  entry (section: "knowledgeHub") {
+    ...EntryBase
+    ... on knowledgeHub_knowledgeHub_Entry {
+      heading
+      wysiwyg
+      image {
+        ...LazyLoadingImage
+      }
+      featuredNews {
+        ...articlePreview
+        ...eventPreview
+        ...podcastPreview
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

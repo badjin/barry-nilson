@@ -1,0 +1,25 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+
+fragment articlePreview on articles_default_Entry {
+	... on articles_default_Entry {
+    ...EntryBase
+    heading
+    excerpt
+    image {
+      ...LazyLoadingImage
+    }
+    categories: knowledgeHubCategory {
+      ... on categories_Category {
+        id
+        title
+      }
+    }
+    knowledgeHubService {
+      ... on expertiseCategory_Category {
+        id
+        title
+      }
+    }
+  }
+}

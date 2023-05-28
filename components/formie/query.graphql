@@ -1,0 +1,18 @@
+#import "~/graph-ql/model/fragments/Formie.graphql"
+
+fragment FormieForm on contentBuilder_formieForm_BlockType {
+  ... on contentBuilder_formieForm_BlockType {
+    __typename
+    formieForm {
+      ...FormFragment
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    themes
+    anchorId
+  }
+}

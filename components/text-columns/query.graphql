@@ -1,0 +1,28 @@
+fragment TextColumns on contentBuilder_textColumns_BlockType {
+  ... on contentBuilder_textColumns_BlockType {
+    __typename
+    heading
+    subheading
+    wysiwyg
+    columns {
+      ... on columns_BlockType {
+        id
+        wysiwyg
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes: themeSimple
+    anchorId
+  }
+}

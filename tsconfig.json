@@ -1,0 +1,16 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    // ...
+    "types": [
+      "vite/client", // if using vite
+      // ...
+    ]
+  },
+  "vueCompilerOptions": {
+    "target": 2.7,
+    "extensions": [
+      ".vue"
+    ]
+  }
+}

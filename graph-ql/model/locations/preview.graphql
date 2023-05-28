@@ -1,0 +1,33 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+fragment locationPreview on locations_default_Entry {
+	... on locations_default_Entry {
+    ...EntryBase
+    locationIndex
+    contactDetail: locationContactDetails {
+      ... on locationContactDetails_BlockType {
+        traditionalName
+        phone
+        fax
+        email
+      }
+    }
+    address {
+      ... on address_BlockType {
+        street1
+        street2
+        city
+        state
+        postCode
+        country
+      }
+    }
+    postalAddress {
+      ... on postalAddress_BlockType {
+        gpoPoBox
+        city
+        state
+        postcode
+      }
+    }
+  }
+}

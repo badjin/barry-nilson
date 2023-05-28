@@ -1,0 +1,30 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+fragment teamMemberPreview on team_default_Entry {
+	... on team_default_Entry {
+    ...EntryBase
+    name: heading
+    profile: image {
+      ...LazyLoadingImage
+    }
+    rolesPositions {
+      ... on positionsRole_Category {
+        id
+        title
+      }
+    }
+    expertise: knowledgeHubService {
+      ... on expertiseCategory_Category {
+        id
+        title
+        level
+      }
+    }
+    location: locationPicker {
+      ... on locations_default_Entry {
+        id
+        title
+      }
+    }
+  }
+}

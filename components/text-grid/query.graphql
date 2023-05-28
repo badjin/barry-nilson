@@ -1,0 +1,48 @@
+fragment TextGrig on contentBuilder_textGrid_BlockType {
+  ... on contentBuilder_textGrid_BlockType {
+    __typename
+    heading
+    subheading
+    wysiwyg
+    callToAction {
+      ariaLabel
+      customText
+      target
+      text
+      title
+      type
+      url
+    }
+    textGrid {
+      ... on textGrid_block_BlockType {
+        id
+        heading
+        cta: blockLink {
+          ariaLabel
+          customText
+          target
+          text
+          title
+          type
+          url
+        }
+
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    alignment
+    anchorId
+  }
+}

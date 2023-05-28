@@ -1,0 +1,60 @@
+#import "~/graph-ql/model/podcasts/preview.graphql"
+#import "~/graph-ql/model/events/preview.graphql"
+#import "~/graph-ql/model/articles/preview.graphql"
+#import "~/graph-ql/model/news/preview.graphql"
+
+fragment EntryList on contentBuilder_entryList_BlockType {
+  ... on contentBuilder_entryList_BlockType {
+    __typename
+    heading
+    cta: callToAction {
+      ariaLabel
+      customText
+      target
+      text
+      title
+      type
+      url
+    }
+    entryOverride {
+      ... on articles_default_Entry {
+        ...articlePreview
+      }
+      ... on events_default_Entry {
+        ...eventPreview
+      }
+      ... on podcasts_default_Entry {
+        ...podcastPreview
+      }
+      ... on news_default_Entry {
+        ...newsPreview
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    anchorId
+    knowledgeHubService {
+      ... on expertiseCategory_Category {
+        id
+        title
+        level
+      }
+    }
+    knowledgeHubCategory {
+      ... on categories_Category {
+        id
+        title
+      }
+    }
+  }
+}

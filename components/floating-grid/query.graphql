@@ -1,0 +1,27 @@
+fragment FloatingGrid on contentBuilder_floatingGrid_BlockType {
+  ... on contentBuilder_floatingGrid_BlockType {
+    heading
+    subheading
+    wysiwyg
+    floatingGrid {
+      ... on floatingGrid_block_BlockType {
+        heading
+        wysiwyg
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

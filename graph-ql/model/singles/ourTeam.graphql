@@ -1,0 +1,26 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+
+query ourTeam {
+  entry (section: "ourTeam") {
+    ...EntryBase
+    ... on ourTeam_ourTeam_Entry {
+      heading
+      wysiwyg
+      image {
+        ...LazyLoadingImage
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

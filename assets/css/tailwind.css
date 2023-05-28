@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './flexible-content.css';
+@import './formie.css';
+@import './forms.css';
+@import './typography.css';
+@import './buttons.css';
+
+body {
+  background: #fff;
+}
+
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.container {
+  @apply px-8;
+}
+
+.shopify-buy-frame--toggle {
+  display: none !important;
+}
+
+figure {
+  @apply inline-block py-10 md:py-11;
+}
+
+img {
+  @apply rounded;
+}
+
+.shape-image.rounded-l-full img {
+  @apply rounded-tr-none rounded-br-none;
+}
+
+.shape-image.rounded-r-full img {
+  @apply rounded-tl-none rounded-bl-none;
+}
+
+.ratio {
+  @apply absolute bottom-0 top-0 left-0 right-0 h-full w-full object-cover;
+}
+.ratio-square {
+  padding-top: 100%;
+}

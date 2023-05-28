@@ -1,0 +1,286 @@
+.tc-btn {
+  @apply cursor-pointer font-display flex items-center not-italic no-underline relative;
+}
+
+.tc-btn:focus {
+  @apply outline-none;
+
+  outline-offset: 0;
+}
+
+/* Primary Button */
+.tc-btn-primary,
+.tc-btn-primary:visited {
+  @apply font-semibold text-sm rounded-full border-2 bg-transparent px-5;
+
+  transition: all 0.5s ease;
+}
+
+/* Dropdown Button */
+.tc-btn-dropdown,
+.tc-btn-dropdown:visited {
+  @apply font-semibold text-sm rounded-full border-2 px-5;
+
+  transition: all 0.5s ease;
+}
+
+/* Redactor button */
+.tc-btn-redactor,
+.tc-btn-redactor:visited {
+  @apply cursor-pointer text-steelblue bg-transparent text-sm font-semibold px-6 py-3 leading-normal border-2 rounded-full justify-center;
+  transition: all 0.5s ease;
+}
+
+.tc-btn-redactor:hover,
+.tc-btn-redactor:active {
+  @apply bg-steelblue border-steelblue text-white;
+}
+
+@screen md {
+  .tc-btn-redactor,
+  .tc-btn-redactor:visited {
+    @apply text-base;
+  }
+}
+
+/* Primary Icon Button */
+.tc-btn-primary--icon,
+.tc-btn-primary--icon:visited {
+  @apply py-3 leading-relaxed;
+}
+
+.tc-btn-primary--icon:hover,
+.tc-btn-primary--icon:active {
+  @apply bg-steelblue text-white border-steelblue;
+}
+
+.tc-btn-primary--icon .icon {
+  @apply w-auto h-5 fill-current text-turquoise mr-3;
+}
+
+/* Shape Link */
+.tc-btn-shape {
+  @apply flex items-start font-bold text-sm leading-snug;
+}
+
+.tc-btn-shape--lg {
+  @apply text-xs font-bold text-turquoise items-center;
+}
+
+.tc-btn-shape .icon-shape {
+  @apply fill-current text-primary w-auto h-4 pr-4;
+  margin-top: 1px;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.tc-btn-shape .icon-blue {
+  @apply fill-current text-blue w-auto h-4 pr-4;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.tc-btn-shape.tc-btn-shape--lg .icon-shape,
+.tc-btn-shape.tc-btn-shape--lg .icon-blue {
+  @apply pr-4;
+}
+
+.tc-btn-shape:hover .icon-shape,
+.tc-btn-shape:active .icon-shape,
+.tc-btn-shape:hover .icon-blue,
+.tc-btn-shape:active .icon-blue {
+  @apply pl-4;
+}
+
+@screen md {
+  .tc-btn-shape {
+    @apply text-base;
+  }
+  .tc-btn-shape .icon-shape,
+  .tc-btn-shape .icon-blue  {
+    @apply h-4;
+  }
+
+  .tc-btn-shape--lg {
+    @apply text-3xl font-medium;
+  }
+
+  .tc-btn-shape.tc-btn-shape--lg .icon-shape,
+  .tc-btn-shape.tc-btn-shape--lg .icon-blue {
+    @apply pr-6;
+  }
+}
+
+/* Underline Type A */
+.tc-btn-underline,
+.tc-btn-underline:visited {
+  @apply relative font-bold text-sm inline-block text-turquoise mb-1;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.tc-btn-underline:after {
+  @apply w-full block absolute bottom-0 bg-turquoise -mb-3px;
+
+  content: '';
+  height: 1px;
+}
+
+.tc-btn-underline:hover,
+.tc-btn-underline:active {
+  @apply text-steelblue;
+}
+
+.tc-btn-underline:hover:after,
+.tc-btn-underline:active:after {
+  @apply bg-steelblue;
+}
+
+/* Underline Type B */
+.tc-menu-link {
+  @apply inline-block relative overflow-hidden;
+}
+
+.tc-menu-link.lg {
+  @apply text-center leading-snug;
+}
+
+.tc-menu-link::before {
+  content: '';
+  @apply w-full border-b  absolute bottom-0 left-0;
+
+  transform: translateX(-105%);
+}
+
+.tc-menu-link.lg::before {
+  @apply border-b-4;
+}
+
+.tc-menu-link:hover::before,
+.tc-menu-link.nuxt-link-exact-active::before {
+  transform: translateX(0%);
+  animation: underline3 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes underline3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Social Links */
+.tc-social-links,
+.tc-social-links:visited {
+  @apply flex transition;
+
+  transition: all 0.5s ease;
+}
+
+.tc-social-links:hover,
+.tc-social-links:active {
+  @apply border-primary;
+}
+
+.tc-social-links .tc-social-links--icon,
+.tc-social-links:visited .tc-social-links--icon {
+  @apply fill-current;
+
+  transition: all 0.5s ease;
+}
+
+.tc-social-links:hover .tc-social-links--icon,
+.tc-social-links:active .tc-social-links--icon {
+  @apply text-primary;
+}
+
+@screen md {
+  .tc-social-links .tc-social-links--icon {
+    @apply h-full;
+  }
+}
+
+/* Tag Button */
+.tc-btn-tag-reverse,
+.tc-btn-tag-reverse:visited {
+  @apply font-semibold text-xs rounded-full text-white px-3 py-1 leading-snug;
+
+  background-color: #0a5169;
+  transition: all 0.5s ease;
+}
+
+.tc-btn-tag-reverse:hover,
+.tc-btn-tag-reverse:active {
+  @apply bg-grey text-steelblue;
+}
+
+/* Tag Button */
+.tc-btn-tag,
+.tc-btn-tag:visited {
+  @apply font-semibold text-xs rounded-full bg-grey text-steelblue text-left px-3 py-1 leading-snug;
+
+  transition: all 0.5s ease;
+}
+
+.tc-btn-tag:hover,
+.tc-btn-tag:active {
+  @apply bg-steelblue text-white;
+}
+
+.tc-underline {
+  @apply relative inline-block;
+
+  font-size: 16px;
+}
+
+.tc-underline::after {
+  @apply w-full bg-steelblue absolute bottom-0 left-0;
+
+  content: '';
+  height: 1px;
+  transition: all 0.5s ease;
+}
+
+.tc-underline:hover::after,
+.tc-underline:active::after {
+  @apply w-0;
+}
+
+.tc-underline-reverse {
+  @apply relative inline-block;
+
+  font-size: 16px;
+}
+
+.tc-underline-reverse::after {
+  @apply w-full bg-white absolute bottom-0 left-0;
+
+  content: '';
+  height: 1px;
+  transition: all 0.5s ease;
+}
+
+.tc-underline-reverse:hover::after,
+.tc-underline-reverse:active::after {
+  @apply w-0;
+}
+
+/* Play Button */
+.tc-btn-play,
+.tc-btn-play:visited {
+  @apply h-16 w-16 rounded-full bg-steelblue flex items-center justify-center cursor-pointer;
+
+  transition: all 0.5s ease;
+}
+
+.tc-btn-play:hover,
+.tc-btn-play:active {
+  @apply bg-darkteal;
+}
+
+.icon-play {
+  @apply w-auto h-16 fill-current text-white ml-1;
+}

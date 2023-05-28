@@ -1,0 +1,155 @@
+query GetGlobal {
+  siteBanner: globalSet(handle: "siteBanner") {
+    ... on siteBanner_GlobalSet {
+      heading: banner
+    }
+  }
+  newsletter: globalSet(handle: "newsletter") {
+    ... on newsletter_GlobalSet {
+      newsletter {
+        ... on newsletter_BlockType {
+          heading
+          wysiwyg
+          popupWindow {
+            ... on popupWindow_block_BlockType {
+              heading
+              subheading
+              formUrl
+            }
+          }
+        }
+      }
+    }
+  }
+  settings: globalSet(handle: "settings") {
+    ... on settings_GlobalSet {
+      settings {
+        ... on settings_BlockType {
+          icon {
+            url
+          }
+          twitterHandle
+          socialLinks {
+            ... on socialLinks_socialLink_BlockType {
+              socialName
+              socialUrl
+            }
+          }
+          siteUrl
+        }
+      }
+      copyright
+      disclaimer {
+        ... on disclaimer_BlockType {
+          acknowledgement
+          legalNotice
+        }
+      }
+    }
+  }
+  analytics: globalSet(handle: "analytics") {
+    ... on analytics_GlobalSet {
+      gtmId
+    }
+  }
+  schema: globalSet(handle: "schema") {
+    handle
+    ... on schema_GlobalSet {
+      schema {
+        ... on schema_BlockType {
+          organisationName
+          organisationDescription
+          organisationImage {
+            url
+          }
+          organisationSocialProfiles {
+            url
+          }
+          searchActionUrlTemplate
+          searchActionQueryInput
+        }
+      }
+    }
+  }
+  seo: globalSet(handle: "seo") {
+    handle
+    ... on seo_GlobalSet {
+      seoSettingsGlobal{
+        __typename
+        ... on seoSettingsGlobal_BlockType {
+          image {
+            url
+          }
+          siteTitle
+        }
+      }
+    }
+  }
+  redirects: globalSet(handle: "redirects") {
+    ... on redirects_GlobalSet {
+      redirects {
+        newPath
+        oldPath
+      }
+    }
+  }
+  dnsPrefetch: globalSet(handle: "dnsPrefetch") {
+    ... on dnsPrefetch_GlobalSet {
+      dns {
+        url
+      }
+    }
+  }
+  footer: globalSet(handle: "footer") {
+    ... on footer_GlobalSet {
+      footerCta {
+        ... on footerCta_BlockType {
+          heading
+          wysiwyg
+          linkedField {
+            ariaLabel
+            customText
+            target
+            text
+            title
+            type
+            url
+          } 
+        }
+      }
+    }
+  }
+  footerPrimary: nodes(navHandle: "footerPrimary", level: 1) {
+    title
+    url
+    uri:nodeUri
+    id
+  }
+  primary: nodes(navHandle: "primary", level: 1) {
+    title
+    url
+    uri:nodeUri
+    id
+    element {
+      uri
+    }
+    children {
+      title
+      url
+      uri:nodeUri
+      id
+      element {
+        uri
+      }
+      children {
+        title
+        url
+        uri:nodeUri
+        id
+        element {
+          uri
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#import "~/graph-ql/model/team/preview.graphql"
+query teamIndex {
+  entries(section: "team") {
+    ... on team_default_Entry {
+      ...teamMemberPreview
+    }
+  }
+}

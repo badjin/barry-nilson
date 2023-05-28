@@ -1,0 +1,6 @@
+#import "~/graph-ql/model/events/preview.graphql"
+query Events {
+  entries(section: "events") {
+    ...eventPreview
+  }
+}

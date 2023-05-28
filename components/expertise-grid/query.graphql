@@ -1,0 +1,62 @@
+fragment ExpertiseGrid on contentBuilder_expertiseGrid_BlockType {
+  ... on contentBuilder_expertiseGrid_BlockType {
+    __typename
+    expertiseGrid {
+      ... on expertiseGrid_BlockType {
+        id
+        sectionHeading {
+          ... on sectionHeading_TableRow {
+            section1
+            section2
+          }
+        }
+        sectionName {
+          ... on sectionName_TableRow {
+            section1
+            section2
+          }
+        }
+      }
+    }
+    section1 {
+      ... on section1_block_BlockType {
+        cta {
+          ariaLabel
+          customText
+          target
+          text
+          title
+          type
+          url
+        }
+      }
+    }
+    section2 {
+      ... on section2_block_BlockType {
+        cta {
+          ariaLabel
+          customText
+          target
+          text
+          title
+          type
+          url
+        }
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

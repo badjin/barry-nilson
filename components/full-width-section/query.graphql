@@ -1,0 +1,23 @@
+fragment FullWidthSection on contentBuilder_fullWidthSection_BlockType {
+  ... on contentBuilder_fullWidthSection_BlockType {
+    __typename
+    heading
+    subheading
+    wysiwyg
+    fullWidthSection
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

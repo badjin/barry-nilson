@@ -1,0 +1,35 @@
+#import "~/graph-ql/model/team/preview.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query getTeamMember($slug: [String]) {
+  entry(section: "team", uri: $slug) {
+    ...teamMemberPreview
+    ... on team_default_Entry {
+      description
+      peopleContactDetails {
+        ... on peopleContactDetails_BlockType {
+          email
+          phone
+        }
+      }
+      peopleSkills {
+        ... on peopleSkills_BlockType {
+          id
+          heading: skillGroupHeading
+          description: skillDescription
+        }
+      }
+      
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

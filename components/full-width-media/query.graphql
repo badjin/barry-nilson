@@ -1,0 +1,34 @@
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+fragment FullWidthMedia on contentBuilder_fullWidthMedia_BlockType {
+  ... on contentBuilder_fullWidthMedia_BlockType {
+    __typename
+    mediaSwitch
+    image {
+      ...LazyLoadingImage
+    }
+    videoEmbad {
+      ... on videoEmbad_BlockType {
+        thumbnail {
+          ...LazyLoadingImage
+        }
+        videoPlatform
+        youtubeUrl
+        vimeoId
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

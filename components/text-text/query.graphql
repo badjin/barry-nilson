@@ -1,0 +1,31 @@
+fragment TextText on contentBuilder_textText_BlockType {
+  ... on contentBuilder_textText_BlockType {
+    __typename
+    mainText: heading
+    subText: description
+    wysiwyg
+    callToAction {
+      ariaLabel
+      customText
+      target
+      text
+      title
+      type
+      url
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes: themeSimple2
+    anchorId
+  }
+}

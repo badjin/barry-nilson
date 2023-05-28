@@ -1,0 +1,16 @@
+fragment seoSettings on seoSettings_BlockType {
+  title: seoTitle
+  description: seoDescription
+  featuredImage: seoImage {
+    url @transform(width: 1000, immediately: true)
+  }
+  twitterImage {
+    url @transform(width: 1000, immediately: true)
+  }
+  facebookImage {
+    url @transform(width: 1000, immediately: true)
+  }
+  noIndex
+  appendTitle
+  canonicalUrl
+}

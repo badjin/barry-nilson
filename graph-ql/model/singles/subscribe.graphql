@@ -1,0 +1,17 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query Subscribe {
+  entry (section: "subscribe") {
+    ...EntryBase
+    ... on subscribe_subscribe_Entry {
+      heading
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

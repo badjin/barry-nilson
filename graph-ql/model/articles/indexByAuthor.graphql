@@ -1,0 +1,6 @@
+#import "~/graph-ql/model/articles/preview.graphql"
+query ArticlesByAuthor($authorId: [QueryArgument]) {
+  entries(section: "articles", authorKnowledgeHub: $authorId) {
+    ...articlePreview
+  }
+}

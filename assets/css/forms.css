@@ -1,0 +1,77 @@
+.tc-input {
+  @apply p-4 py-4 leading-none bg-white placeholder-grey placeholder-opacity-70 text-grey border border-blue w-full rounded-full;
+
+  -webkit-appearance: none;
+}
+
+.tc-input:focus,
+.tc-select:focus {
+  @apply outline-none border-primary;
+}
+
+.tc-search-input {
+  @apply px-8 py-3 text-3xl leading-none bg-white bg-opacity-10 placeholder-white placeholder-opacity-40 w-full rounded-full;
+
+  -webkit-appearance: none;
+}
+
+.tc-search-input:focus,
+.tc-search-select:focus {
+  @apply outline-none border-steelblue;
+}
+
+.tc-select {
+  @apply px-4 py-4 leading-snug bg-white text-grey border border-blue w-full rounded-full relative z-10;
+
+  -webkit-appearance: none;
+}
+
+@screen md {
+  .tc-select {
+    @apply py-4 leading-none;
+  }
+}
+
+.tc-checkbox {
+  @apply flex flex-row items-start text-white;
+}
+
+.tc-checkbox__icon {
+  @apply w-4 inline-block mr-3 not-sr-only text-white;
+
+  margin-top: 3px;
+}
+
+.tc-textarea {
+  @apply rounded h-36;
+}
+
+.tc-error {
+  @apply text-form text-xs;
+}
+
+.tc-error__icon {
+  @apply w-auto h-3 fill-current text-form mr-1;
+}
+
+.tc-global-search-text-input__button {
+  @apply absolute top-1 right-1 mt-3 mr-4;
+}
+
+.tc-global-search-text-input__icon {
+  @apply w-auto h-6 fill-current text-white;
+}
+
+.tc-form {
+  @apply text-steelblue;
+}
+
+.tc-text-input {
+  @apply text-lg;
+
+  -webkit-appearance: none;
+}
+
+.tc-label {
+  @apply text-steelblue;
+}

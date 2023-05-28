@@ -1,0 +1,35 @@
+#import "~/graph-ql/model/events/preview.graphql"
+#import "~/graph-ql/model/podcasts/preview.graphql"
+#import "~/graph-ql/model/articles/preview.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query getEvent($slug: [String]) {
+  entry(section: "events", uri: $slug) {
+    ...eventPreview
+    ... on events_default_Entry {
+      triggerWarning
+      eventTags {
+        ... on eventTags_Tag {
+          id
+          title
+        }
+      }
+      overrideKnowledge {
+        ...articlePreview
+        ...eventPreview
+        ...podcastPreview
+      }
+      mainContent: wysiwyg
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

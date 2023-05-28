@@ -1,0 +1,33 @@
+#import "~/graph-ql/model/locations/preview.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+
+query getLocation($slug: [String]) {
+  entry(section: "locations", uri: $slug) {
+    ...locationPreview
+    ... on locations_default_Entry {
+      heading
+      howToGetHere
+      locationMapDetails {
+        ... on locationMapDetails_BlockType {
+          lat
+          lng
+        }
+      }
+      openingHours {
+        ... on openingHours_TableRow {
+          text
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

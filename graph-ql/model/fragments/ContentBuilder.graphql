@@ -1,0 +1,34 @@
+#import "~/components/cta/query.graphql"
+#import "~/components/entry-list/query.graphql"
+#import "~/components/accordion/query.graphql"
+#import "~/components/image-text/query.graphql"
+#import "~/components/text-text/query.graphql"
+#import "~/components/text-divider/query.graphql"
+#import "~/components/text-grid/query.graphql"
+#import "~/components/text-columns/query.graphql"
+#import "~/components/floating-grid/query.graphql"
+#import "~/components/full-width-section/query.graphql"
+#import "~/components/expertise-grid/query.graphql"
+#import "~/components/global-content/query.graphql"
+#import "@/components/quote/query.graphql"
+#import "@/components/full-width-media/query.graphql"
+
+fragment ContentBuilder on contentBuilder_NeoField {
+  ... on contentBuilder_NeoField {
+    ...CTA
+    ...EntryList
+    ...Quote
+    ...Accordion
+    ...ImageText
+    ...TextText
+    ...TextDivider
+    ...TextGrig
+    ...TextColumns
+    ...FloatingGrid
+    ...FullWidthSection
+    ...ExpertiseGrid
+    ...GlobalContent
+    ...FullWidthMedia
+  }
+}
+

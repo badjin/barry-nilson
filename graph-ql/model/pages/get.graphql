@@ -1,0 +1,104 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+
+query PageGet($slug: [String]) {
+  entry(section: "pages",  uri: $slug) {
+    ...EntryBase
+    ... on pages_default_Entry {
+      heading
+      subheading
+      wysiwyg
+      parent {
+        id
+        slug
+        title
+      }
+      footerCtaSwitch {
+        ... on footerCtaSwitch_BlockType {
+          talkToUs
+          newsletter
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+    ... on pages_expertise_Entry {
+      heading
+      subheading
+      wysiwyg
+      parent {
+        id
+        slug
+        title
+      }
+      image {
+        ...LazyLoadingImage
+      }
+      footerCtaSwitch {
+        ... on footerCtaSwitch_BlockType {
+          talkToUs
+          newsletter
+        }
+      }
+      inThisSection {
+        ... on inThisSection_block_BlockType {
+          contentTag {
+            ariaLabel
+            customText
+            target
+            text
+            title
+            type
+            url
+          }
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+    ... on pages_childPage_Entry {
+      heading
+      subheading
+      wysiwyg
+      parent {
+        id
+        slug
+        title
+      }
+      image {
+        ...LazyLoadingImage
+      }
+      footerCtaSwitch {
+        ... on footerCtaSwitch_BlockType {
+          talkToUs
+          newsletter
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

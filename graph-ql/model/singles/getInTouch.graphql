@@ -1,0 +1,50 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query GetInTouch {
+  entry (section: "getInTouch") {
+    ...EntryBase
+    ... on getInTouch_getInTouch_Entry {
+      hero: contactHero {
+        ... on contactHero_BlockType {
+          heading
+          ctaBlocks {
+            ... on ctaBlocks_block_BlockType {
+              heading
+              wysiwyg
+              linkButtons {
+                ... on linkButtons_BlockType {
+                  cta {
+                    ariaLabel
+                    customText
+                    target
+                    text
+                    title
+                    type
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      formMeta {
+        ... on formMeta_BlockType {
+          heading
+          successMessage
+        }
+      }
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

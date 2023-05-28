@@ -1,0 +1,16 @@
+fragment EntryBase on EntryInterface {
+  __typename
+  title
+  id
+  uri
+  slug
+  dateCreated
+  postDate
+  postDateFormatted: postDate @formatDateTime(format: "d F Y")
+  author {
+    id
+    name
+    firstName
+    lastName
+  }
+}

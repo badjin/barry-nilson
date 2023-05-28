@@ -1,0 +1,587 @@
+:root {
+  @apply font-body font-normal tracking-normal text-steelblue;
+
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  @apply font-bold;
+}
+
+figcaption {
+  @apply text-sm mt-4;
+}
+
+.tc-wys:last-child *:last-child {
+  @apply mb-0;
+}
+
+.tc-wys {
+  a {
+    @apply text-turquoise border-b border-primary hover:border-white;
+
+    padding-bottom: 1px;
+
+  }
+  span {
+    a {
+      @apply py-3 border-none text-steelblue hover:text-white;
+    }
+  }
+}
+
+/* H1 */
+@layer base {
+  .tc-h1-mobile {
+    @apply text-4xl font-display font-medium leading-tight tracking-tighter;
+  }
+
+  .tc-h1-tablet {
+    font-size: 3vw;
+  }
+
+  .tc-h1-desktop {
+    @apply text-6xl;
+  }
+}
+
+.tc-h1 {
+  @apply tc-h1-mobile;
+}
+
+@screen lg {
+  .tc-h1 {
+    @apply tc-h1-tablet;
+  }
+}
+
+@screen 3xl {
+  .tc-h1 {
+    @apply tc-h1-desktop;
+  }
+}
+
+.tc-wys {
+  h1 {
+    @apply tc-h1-mobile;
+  }
+}
+
+h1 {
+  @apply tc-h1-mobile;
+}
+
+@screen md {
+  .tc-wys {
+    h1 {
+      @apply tc-h1-desktop;
+    }
+  }
+  h1 {
+    @apply tc-h1-desktop;
+  }
+}
+
+/* H2 */
+@layer base {
+  .tc-h2-mobile {
+    @apply text-2xl font-display font-medium leading-snug tracking-tighter;
+  }
+
+  .tc-h2-desktop {
+    @apply text-3xl;
+  }
+}
+
+.tc-h2 {
+  @apply tc-h2-mobile;
+}
+
+@screen md {
+  .tc-h2 {
+    @apply tc-h2-desktop;
+  }
+}
+
+.tc-wys {
+  h2 {
+    @apply tc-h2-mobile my-3;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    h2 {
+      @apply tc-h2-desktop;
+    }
+  }
+}
+
+/* H3 */
+@layer base {
+  .tc-h3-mobile {
+    @apply text-lg font-display font-medium leading-snug tracking-tighter;
+  }
+
+  .tc-h3-desktop {
+    @apply text-xl;
+  }
+}
+
+.tc-h3 {
+  @apply tc-h3-mobile;
+}
+
+@screen md {
+  .tc-h3 {
+    @apply tc-h3-desktop;
+  }
+}
+
+.tc-wys {
+  h3 {
+    @apply tc-h3-mobile mt-3 mb-2;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    h3 {
+      @apply tc-h3-desktop;
+    }
+  }
+}
+
+/* H4 */
+@layer base {
+  .tc-h4-mobile {
+    @apply text-base font-display font-medium leading-snug tracking-tighter;
+  }
+
+  .tc-h4-desktop {
+    @apply text-lg;
+  }
+}
+
+.tc-h4 {
+  @apply tc-h4-mobile;
+}
+
+@screen md {
+  .tc-h4 {
+    @apply tc-h4-desktop;
+  }
+}
+
+.tc-wys {
+  h4 {
+    @apply tc-h4-mobile mt-3 mb-2;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    h4 {
+      @apply tc-h4-desktop;
+    }
+  }
+}
+
+/* H5 */
+@layer base {
+  .tc-h5-mobile {
+    @apply text-sm font-display font-bold leading-snug tracking-tighter uppercase;
+  }
+
+  .tc-h5-desktop {
+    @apply text-sm;
+  }
+}
+
+.tc-h5 {
+  @apply tc-h5-mobile;
+}
+
+@screen md {
+  .tc-h5 {
+    @apply tc-h5-desktop;
+  }
+}
+
+.tc-wys {
+  h5 {
+    @apply tc-h5-mobile mt-3 mb-2;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    h5 {
+      @apply tc-h5-desktop;
+    }
+  }
+}
+
+/* Paragraph */
+@layer base {
+  .tc-p-mobile {
+    @apply text-base leading-normal;
+  }
+
+  .tc-p-desktop {
+    @apply text-base;
+  }
+}
+
+.tc-p {
+  @apply tc-p-mobile;
+}
+
+@screen md {
+  .tc-p {
+    @apply tc-p-desktop;
+  }
+}
+
+.tc-wys {
+  p {
+    @apply tc-p-mobile mb-6;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    p {
+      @apply tc-p-desktop;
+    }
+  }
+}
+
+/* Small */
+@layer base {
+  .tc-small-mobile {
+    @apply text-xs;
+  }
+
+  .tc-small-desktop {
+    @apply text-xs;
+  }
+}
+
+.tc-small {
+  @apply tc-small-mobile;
+}
+
+@screen md {
+  .tc-small {
+    @apply tc-small-desktop;
+  }
+}
+
+.tc-wys {
+  small {
+    @apply tc-small-mobile;
+  }
+}
+
+@screen md {
+  .tc-wys {
+    small {
+      @apply tc-small-desktop;
+    }
+  }
+}
+
+/* Unordered List */
+.tc-wys {
+  ul {
+    @apply my-6 list-none;
+  }
+
+  ul li {
+    @apply list-none relative pl-5 mb-1 bg-no-repeat;
+
+    background-image: url(/images/arrow.svg?inline);
+    background-size: 11px 11px;
+    background-position: 0 7px;
+  }
+
+  ul.tc-indent li {
+    @apply pl-5;
+    background-image: none;
+  }
+
+  ul ul {
+    @apply ml-5 my-3 !important;
+  }
+
+  ul li li {
+    @apply list-disc pl-1 mb-2 bg-none;
+  }
+
+  ul li li::marker {
+    @apply text-turquoise;
+  }
+
+  ul li li:last-of-type {
+    @apply mb-0;
+  }
+
+  ul ol {
+    @apply my-3 list-decimal !important;
+    li {
+      @apply list-decimal;
+      &::marker {
+        @apply text-steelblue;
+      }
+    }
+  }
+  ul.ul-ol-alpha {
+    ol {
+      li {
+        list-style-type: lower-alpha;
+      }
+    }
+  }
+}
+
+/* Ordered List */
+.tc-wys {
+  ol {
+    @apply my-6;
+  }
+
+  ol li {
+    @apply list-decimal relative ml-5 mb-1;
+  }
+
+  ol ol {
+    @apply my-3 !important;
+  }
+
+  ol li li {
+    @apply pl-1 mb-2;
+
+    list-style-type: lower-alpha;
+  }
+
+  ol li li:last-of-type {
+    @apply mb-0;
+  }
+
+  ol ul {
+    @apply my-3 list-none !important;
+    li {
+      @apply list-none pl-5 ml-0;
+    }
+  }
+}
+
+/* Caps Title */
+@layer base {
+  .tc-caps-title-mobile {
+    @apply text-xs font-display font-medium leading-normal tracking-loose uppercase;
+  }
+
+  .tc-caps-title-desktop {
+    @apply text-xs;
+  }
+}
+
+.tc-caps-title {
+  @apply tc-caps-title-mobile;
+}
+
+@screen md {
+  .tc-caps-title {
+    @apply tc-caps-title-desktop;
+  }
+}
+
+/* Table */
+.tc-wys {
+  table {
+    @apply min-w-full;
+
+    thead {
+      @apply bg-white border-b border-steelblue border-opacity-30 text-primary text-left;
+
+      th {
+        @apply font-display font-bold text-base px-5 py-3;
+      }
+    }
+
+    td {
+      @apply px-5 py-3;
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        @apply bg-grey;
+      }
+    }
+  }
+}
+
+/* Blockquote */
+@layer base {
+  .tc-blockquote-mobile {
+    @apply text-steelblue pl-7 border-l-3 border-l-turquoise my-10 text-xl;
+  }
+
+  .tc-blockquote-desktop {
+    @apply text-2xl;
+  }
+}
+
+.tc-blockquote {
+  @apply tc-blockquote-mobile;
+}
+
+@screen md {
+  .tc-blockquote {
+    @apply tc-blockquote-desktop;
+  }
+}
+
+.tc-wys {
+  blockquote {
+    @apply tc-blockquote-mobile font-medium font-display leading-snug tracking-tighter;
+    /* em {
+        @apply text-xs font-body font-normal leading-none tracking-normal not-italic;
+      } */
+    .tc-cite {
+      @apply text-base font-body leading-none tracking-normal not-italic;
+    }
+  }
+}
+
+@screen md {
+  .tc-wys {
+    blockquote {
+      @apply tc-blockquote-desktop;
+    }
+  }
+}
+
+.tc-category-dark {
+  @apply font-semibold text-white text-xs px-3 py-1 rounded-full leading-snug;
+
+  background-color: #0a5169;
+}
+
+.tc-category {
+  @apply font-semibold text-steelblue bg-grey text-xs px-3 py-1 rounded-full leading-snug;
+}
+
+/* Component H2 */
+@layer base {
+  .tc-component-h2-mobile {
+    @apply text-4xl font-display font-medium leading-tight tracking-tighter;
+  }
+
+  .tc-component-h2-desktop {
+    @apply text-5xl;
+  }
+}
+
+.tc-component-h2 {
+  @apply tc-component-h2-mobile;
+}
+
+@screen lg {
+  .tc-component-h2 {
+    @apply tc-component-h2-desktop;
+  }
+}
+
+/* Subheading */
+.tc-sub-heading {
+  @apply text-2xl font-display font-medium leading-snug tracking-tighter;
+}
+
+@screen xl {
+  .tc-sub-heading {
+    @apply text-3xl;
+  }
+}
+
+.tc-wys {
+  hr {
+    @apply my-5;
+    color: #dfccb0;
+  }
+  .tc-divider {
+    @apply w-full mb-10 h-5 border-b border-steelblue border-opacity-30;
+
+    font-size: 0;
+  }
+  .tc-cite {
+    @apply text-xs text-steelblue opacity-60;
+    a {
+      @apply text-steelblue border-steelblue;
+      &:hover {
+        @apply border-white;
+      }
+    }
+  }
+
+  .warning-blue {
+    @apply block px-4 py-2 text-white bg-blue mb-8;
+
+    border-radius: 5px;
+
+    p {
+      @apply mb-0;
+    }
+  }
+  .warning-yellow {
+    @apply block px-4 py-2 text-steelblue bg-sand mb-8;
+
+    border-radius: 5px;
+
+    p {
+      @apply mb-0;
+    }
+  }
+  .tc-highlight {
+    @apply text-darkteal mb-4 tc-h2-mobile;
+
+    a {
+      @apply text-turquoise underline hover:no-underline;
+    }
+  }
+}
+
+@screen lg {
+  .tc-wys {
+    .tc-highlight {
+      @apply text-darkteal mb-4 tc-h2-desktop;
+
+      a {
+        @apply text-turquoise border-b-0 underline hover:no-underline;
+      }
+    }
+  }
+}
+
+.tc-wys {
+  h2 {
+    em {
+      @apply text-darkteal not-italic mb-4;
+    }
+  }
+}
+@screen lg {
+  .tc-wys {
+    hr {
+      @apply my-10;
+      color: #dfccb0;
+    }
+  }
+}
+
+.tc-text-grid .tc-wys p:last-of-type {
+  @apply mb-0;
+}

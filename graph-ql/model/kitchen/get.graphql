@@ -1,0 +1,23 @@
+#import "~/graph-ql/model/fragments/EntryBase.graphql"
+#import "~/graph-ql/model/fragments/ContentBuilder.graphql"
+#import "~/graph-ql/model/fragments/seo.graphql"
+
+query PageGet($slug: [String]) {
+  entry(section: "kitchenSink",  uri: $slug) {
+    ...EntryBase
+    ... on kitchenSink_default_Entry {
+      heading
+      subheading
+      wysiwyg
+      contentBuilder {
+        ...ContentBuilder
+      }
+      seo: seoSettings{
+        __typename
+        ... on seoSettings_BlockType {
+          ...seoSettings
+        }
+      }
+    }
+  }
+}

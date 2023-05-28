@@ -1,0 +1,32 @@
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+fragment Accordion on contentBuilder_accordion_BlockType {
+  ... on contentBuilder_accordion_BlockType {
+    __typename
+    heading
+    subheading
+    wysiwyg
+    accordion {
+      ... on accordion_block_BlockType {
+        heading
+        wysiwyg
+        image {
+          ...LazyLoadingImage
+        }
+      }
+    }
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    border {
+      ... on border_BlockType {
+        topBorder
+        bottomBorder
+      }
+    }
+    themes
+    anchorId
+  }
+}

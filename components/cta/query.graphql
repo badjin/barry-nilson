@@ -1,0 +1,34 @@
+#import "~/graph-ql/model/fragments/LazyLoadingImage.graphql"
+fragment CTA on contentBuilder_cta_BlockType {
+  ... on contentBuilder_cta_BlockType {
+    __typename
+    heading
+    wysiwyg
+    callToAction {
+      ariaLabel
+      customText
+      target
+      text
+      title
+      type
+      url
+    }
+    image {
+      ...LazyLoadingImage
+    }
+    videoClip {
+      url
+    }
+    mediaSwitch
+    spacing {
+      ... on spacing_BlockType {
+        topMargin
+        bottomMargin
+      }
+    }
+    alignment: alignmentCta
+    themes
+    buttonType
+    anchorId
+  }
+}
